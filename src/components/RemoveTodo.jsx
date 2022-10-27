@@ -14,7 +14,6 @@ function RemoveTodo({ todos, setTodos, task }) {
     if (Array.isArray(remove)) setRemove('');
   }, [remove]);
 
-  console.log(remove);
   return (
     <div>
       <button className="btnDelete" onClick={() => handleRemove(task)}>
