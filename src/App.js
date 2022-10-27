@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Todo from './pages/Todo';
 
 function App() {
+  const [status, setStatus] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setStatus(true);
+    }, 2000);
+  }, []);
+
+  if (!status) {
+    return <p className="loading">Loading...</p>;
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Todo />
     </div>
   );
 }
