@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import RemoveTodo from './RemoveTodo';
 
 function ShowTodo({ task, time, setTask, setTime }) {
   const [todos, setTodos] = useState([]);
@@ -16,7 +17,9 @@ function ShowTodo({ task, time, setTask, setTime }) {
 
   return (
     <div className="containerShow">
-      <button onClick={handleSubmit}>Tambah Todo</button>
+      <button className="btnSubmit" onClick={handleSubmit}>
+        Tambah Todo
+      </button>
       <div className="showTodo">
         {todos.length > 0 &&
           todos.map((todo, index) => {
@@ -24,6 +27,11 @@ function ShowTodo({ task, time, setTask, setTime }) {
               <div className="card" key={index}>
                 <p>Task: {todo.task}</p>
                 <p>Time: {todo.time}</p>
+                <RemoveTodo
+                  todos={todos}
+                  setTodos={setTodos}
+                  task={todo.task}
+                />
               </div>
             );
           })}

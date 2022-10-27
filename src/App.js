@@ -3,15 +3,15 @@ import './App.css';
 import Todo from './pages/Todo';
 
 function App() {
-  const [status, setStatus] = useState(false);
+  const [status, setStatus] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
-      setStatus(true);
+      setStatus(false);
     }, 2000);
   }, []);
 
-  if (!status) {
+  if (status) {
     return <p className="loading">Loading...</p>;
   }
 

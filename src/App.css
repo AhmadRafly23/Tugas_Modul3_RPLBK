@@ -28,7 +28,7 @@
   color: black;
 }
 
-.containerShow button {
+.btnSubmit {
   padding: 8px 16px;
   border-radius: 6px;
   background-color: blueviolet;
@@ -49,4 +49,14 @@
   background-color: aqua;
   border-radius: 6px;
   word-wrap: break-word;
+  padding: 16px 0 32px 0;
+}
+
+.btnDelete {
+  padding: 8px 16px;
+  border-radius: 6px;
+  background-color: crimson;
+  border: none;
+  color: aliceblue;
+  cursor: pointer;
 }
