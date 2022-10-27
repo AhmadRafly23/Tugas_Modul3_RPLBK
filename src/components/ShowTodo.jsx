@@ -15,4 +15,29 @@ function ShowTodo({ task, time, setTask, setTime }) {
     setTime('');
   };
 
+  return (
+    <div className="containerShow">
+      <button className="btnSubmit" onClick={handleSubmit}>
+        Tambah Todo
+      </button>
+      <div className="showTodo">
+        {todos.length > 0 &&
+          todos.map((todo, index) => {
+            return (
+              <div className="card" key={index}>
+                <p>Task: {todo.task}</p>
+                <p>Time: {todo.time}</p>
+                <RemoveTodo
+                  todos={todos}
+                  setTodos={setTodos}
+                  task={todo.task}
+                />
+              </div>
+            );
+          })}
+      </div>
+    </div>
+  );
+}
 
+export default ShowTodo;
